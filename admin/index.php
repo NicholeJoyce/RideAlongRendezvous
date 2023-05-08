@@ -42,7 +42,7 @@ if (!empty($_SESSION['message'])) {
 }
 
 .topnav a {
-  float: left;
+  float: right;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
@@ -63,10 +63,10 @@ if (!empty($_SESSION['message'])) {
 
 </head>
 <div class="topnav">
-        <a href="car_config/car_module.php" class="btn btn-primary"  style="background-color:#161B30"> Car Approval </a>
-        <a href="id_config/id_module.php"  class="btn btn-secondary"  style="background-color:#161B30"> ID Approval </a>
-        <a href="user_config/user_module.php" class="btn btn-success"  style="background-color:#161B30"> List of Verified Users </a>
-        <a href="../config/logout.php" class="btn btn-danger"> Logout </a>
+        <a href="car_config/car_module.php" > Car Approval </a>
+        <a href="id_config/id_module.php" > ID Approval </a>
+        <a href="user_config/user_module.php"> List of Verified Users </a>
+        <a href="../config/logout.php"> Logout </a>
         </div>
 
 <body style="background: linear-gradient(to bottom left, #B0E0E6 10%, #BD1088 100%)">
