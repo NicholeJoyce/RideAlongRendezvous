@@ -25,6 +25,7 @@ if (!empty($_SESSION['message'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="carpoollogo.png" rel="icon">
     <title> Admin Panel </title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -35,9 +36,38 @@ if (!empty($_SESSION['message'])) {
     .button{
         background-color:#161B30"
     }
+    .topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
 </style>
 
 </head>
+<div class="topnav">
+        <a href="car_config/car_module.php" class="btn btn-primary"  style="background-color:#161B30"> Car Approval </a>
+        <a href="id_config/id_module.php"  class="btn btn-secondary"  style="background-color:#161B30"> ID Approval </a>
+        <a href="user_config/user_module.php" class="btn btn-success"  style="background-color:#161B30"> List of Verified Users </a>
+        <a href="../config/logout.php" class="btn btn-danger"> Logout </a>
+        </div>
 
 <body style="background: linear-gradient(to bottom left, #B0E0E6 10%, #BD1088 100%)">
 
@@ -57,12 +87,7 @@ if (!empty($_SESSION['message'])) {
 
         <h1> Admin - Approval </h1>
 
-        <div class="button">
-        <a href="car_config/car_module.php" class="btn btn-primary"  style="background-color:#161B30"> Car Approval </a>
-        <a href="id_config/id_module.php"  class="btn btn-secondary"  style="background-color:#161B30"> ID Approval </a>
-        <a href="user_config/user_module.php" class="btn btn-success"  style="background-color:#161B30"> List of Verified Users </a>
-        <a href="../config/logout.php" class="btn btn-danger"> Logout </a>
-        </div>
+
         <hr>
 
 
