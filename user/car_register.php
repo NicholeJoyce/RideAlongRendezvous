@@ -6,7 +6,7 @@ if (!empty($_SESSION['message'])) {
     $message = $_SESSION['message'];
     $bg = $_SESSION['bg'];
 }
-
+ 
 ?>
 
 <!DOCTYPE html>
@@ -134,11 +134,11 @@ if (!empty($_SESSION['message'])) {
                 </div>
             </div>
 
-            <div class="row">
+            <!-- <div class="row">
                 <div class="mb-3 col-4">
                     <label for="car_category" class="form-label">Car Category <span class="text-danger">*</span></label>
                     <input type="text" name="CarCategory" id="car_category" class="form-control" required>
-                </div>
+                </div> -->
 
                 <div class="mb-3 col-4">
                     <label for="car_fuel" class="form-label">Car Fuel <span class="text-danger">*</span></label>

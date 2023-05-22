@@ -7,7 +7,7 @@ include_once '../includes/auth.php';
 $sql = "SELECT * FROM car 
 INNER JOIN userinfo
 ON car.DriverID = userinfo.UserID
-WHERE TimeConfirmed IS NULL AND Status = 0;
+WHERE TimeVerified IS NULL AND Status = 0;
 ";
 $result = $connection->query($sql);
 
@@ -66,6 +66,8 @@ if (!empty($_SESSION['message'])) {
         <a href="car_config/car_module.php" > Car Approval </a>
         <a href="id_config/id_module.php" > ID Approval </a>
         <a href="user_config/user_module.php"> List of Verified Users </a>
+        <a href="cico/cashin_design.php"> Cash In Approval </a>
+        <a href="cashout/cashout_design.php"> Cash Out Approval </a>
         <a href="../config/logout.php"> Logout </a>
         </div>
 

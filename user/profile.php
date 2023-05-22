@@ -10,6 +10,8 @@ $result = $connection->query($sql);
 // Retrieves Pending Car Approval
 $car_sql = "SELECT * FROM car WHERE DriverID = '$id';";
 $car_result = $connection->query($car_sql);
+// echo $car_result->num_rows;
+// return;
 
 // Retrieves Passenger
 $pass_sql = "SELECT * FROM passengerinfo WHERE UserID=$id";
@@ -37,6 +39,7 @@ if ($result->num_rows > 0) {
         $fname = $row['FirstName'];
         $lname = $row['LastName'];
         $contact_no = $row['ContactNum'];
+        $balance= $row['uBalance'];
         $st = $row['Street'];
         $unitnum = $row['UnitNum'];
         $barangay = $row['Baranggay'];
@@ -55,7 +58,6 @@ if ($result->num_rows > 0) {
     header('Location: ' . $home . '/login.php');
     return;
 }
-
 
 ?>
 
@@ -86,7 +88,57 @@ if ($result->num_rows > 0) {
         .button{
             font-family: 'Bruno Ace Sc';
         }
+        .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .topnav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+
     </style>
+
+<?php
+        if (!is_null($pass_row['TimeConfirmed'])) :
+        ?>
+          <div class="topnav">  <a href="car_register.php"> Register a Car </a> </div>
+        <?php endif; ?>
+
+        <div class="topnav"><a href="update.php" > Update Profile </a></div>
+
+        <?php
+        if ($car_result->num_rows > 0) :
+        ?>
+            <div class="topnav"> <a href="view_cars.php"> View Cars </a></div>
+        <?php endif; ?>
+
+        <div class="topnav"> <a href="../user/cashin.php" > Cash In </a></div>
+        <?php
+    if ($type == 'driver') :
+    ?>
+            <div class="topnav"> <a href="../user/dcashout.php"> Cash Out </a></div>
+        <?php endif; ?>
+
+        <div class="topnav"> <a href="../config/logout.php" > Logout </a></div>
+
+
+
 </head>
 
 
@@ -110,39 +162,38 @@ if ($result->num_rows > 0) {
         <table style="width:100%">
             <tr>
                 <th> Name </th>
-                <td> <?= $fname . ' ' . $lname ?> </td>
+                <td> <?= $fname . ' ' . $lname ?> . <br> </td>
+                
             </tr>
+            
             <tr>
                 <th> Address: </th>
-                <td> <?= $st . ','. $unitnum . ','. $barangay . ', ' . $municipality . ', ' .$zipcode.',' . $province ?> </td>
+                <td> <?= $st . ', '. $unitnum . ', '. $barangay . ', ' . $municipality . ', ' .$zipcode.', ' . $province?> </td>
             </tr>
+            
             <tr>
+                
                 <th> Contact No: </th>
                 <td> <?= $contact_no ?> </td>
+            </tr>
+            
+            <tr>
+                <th> User Balance: </th>
+                <td> <?= $balance ?> </td>
             </tr>
         </table>
 
         <hr>
         <div class="button">
 
-        <?php
-        if (!is_null($pass_row['TimeConfirmed'])) :
-        ?>
-            <a href="car_register.php" class="btn btn-secondary"  style="background-color:#161B30"> Register a Car </a>
-        <?php endif; ?>
 
+        
 
-        <a href="update.php" class="btn btn-secondary"  style="background-color:#161B30"> Update Profile </a>
-
-        <?php
-        if ($car_result->num_rows > 0) :
-        ?>
-            <a href="view_cars.php" class="btn btn-secondary"  style="background-color:#161B30"> View Cars </a>
-        <?php endif; ?>
-
-        <a href="../config/logout.php" class="btn btn-danger"> Logout </a>
+       
 
         </div>
+
+       
 
     </div>
 

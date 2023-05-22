@@ -60,12 +60,12 @@ if (is_null($row['TimeConfirmed'])) {
                 <h3> Personal Details </h3>
                 <div class="mb-3 col-4">
                     <label for="fname" class="form-label">First Name <span class="text-danger">*</span></label>
-                    <input type="text" name="fname" id="fname" class="form-control" required value="<?= $row['FirstName'] ?>" <?= $pass_id_confirmed == 'true' ? 'readonly' : '' ?>>
+                    <input type="text" name="fname" id="fname" class="form-control" required readonly value="<?= $row['FirstName'] ?>" <?= $pass_id_confirmed == 'true' ? 'readonly' : '' ?>>
                 </div>
                
                 <div class="mb-3 col-4">
                     <label for="lname" class="form-label">Last Name <span class="text-danger">*</span></label>
-                    <input type="text" name="lname" id="lname" class="form-control" required value="<?= $row['LastName'] ?>" <?= $pass_id_confirmed == 'true' ? 'readonly' : '' ?>>
+                    <input type="text" name="lname" id="lname" class="form-control" required readonly value="<?= $row['LastName'] ?>" <?= $pass_id_confirmed == 'true' ? 'readonly' : '' ?>>
                 </div>
             </div>
 
@@ -76,53 +76,53 @@ if (is_null($row['TimeConfirmed'])) {
                 </div>
                 <div class="mb-3 col-8">
                     <label for="st" class="form-label">Street <span class="text-danger">*</span></label>
-                    <input type="text" name="st" id="st" class="form-control" required value="<?= $row['Street'] ?>" <?= $pass_id_confirmed == 'true' ? 'readonly' : '' ?>>
+                    <input type="text" name="st" id="st" class="form-control" required readonly value="<?= $row['Street'] ?>" <?= $pass_id_confirmed == 'true' ? 'readonly' : '' ?>>
                 </div>
                 <div class="mb-3 col-8">
                     <label for="unitnum" class="form-label">Unit/House Number <span class="text-danger">*</span></label>
-                    <input type="text" name="unitnum" id="unitnum" class="form-control" required value="<?= $row['UnitNum'] ?>" <?= $pass_id_confirmed == 'true' ? 'readonly' : '' ?>>
+                    <input type="text" name="unitnum" id="unitnum" class="form-control" readonly required value="<?= $row['UnitNum'] ?>" <?= $pass_id_confirmed == 'true' ? 'readonly' : '' ?>>
                 </div>
                 <div class="mb-3 col-8">
                     <label for="barangay" class="form-label">Barangay <span class="text-danger">*</span></label>
-                    <input type="text" name="barangay" id="barangay" class="form-control" required value="<?= $row['Baranggay'] ?>" <?= $pass_id_confirmed == 'true' ? 'readonly' : '' ?>>
+                    <input type="text" name="barangay" id="barangay" class="form-control" required readonly value="<?= $row['Baranggay'] ?>" <?= $pass_id_confirmed == 'true' ? 'readonly' : '' ?>>
                 </div>
             </div>
 
             <div class="row">
                 <div class="mb-3 col-6">
                     <label for="municipality" class="form-label">Municipality <span class="text-danger">*</span></label>
-                    <input type="text" name="municipality" id="municipality" class="form-control" required value="<?= $row['Municipality'] ?>" <?= $pass_id_confirmed == 'true' ? 'readonly' : '' ?>>
+                    <input type="text" name="municipality" id="municipality" class="form-control" required readonly value="<?= $row['Municipality'] ?>" <?= $pass_id_confirmed == 'true' ? 'readonly' : '' ?>>
                 </div>
                 <div class="mb-3 col-6">
                     <label for="zipcode" class="form-label">ZipCode <span class="text-danger">*</span></label>
-                    <input type="text" name="zipcode" id="zipcode" class="form-control" required value="<?= $row['ZipCode'] ?>" <?= $pass_id_confirmed == 'true' ? 'readonly' : '' ?>>
+                    <input type="text" name="zipcode" id="zipcode" class="form-control" required readonly value="<?= $row['ZipCode'] ?>" <?= $pass_id_confirmed == 'true' ? 'readonly' : '' ?>>
                 </div>
 
                 <div class="mb-3 col-6">
                     <label for="province" class="form-label">Province <span class="text-danger">*</span></label>
-                    <input type="text" name="province" id="province" class="form-control" required value="<?= $row['Province'] ?>" <?= $pass_id_confirmed == 'true' ? 'readonly' : '' ?>>
+                    <input type="text" name="province" id="province" class="form-control" required readonly value="<?= $row['Province'] ?>" <?= $pass_id_confirmed == 'true' ? 'readonly' : '' ?>>
                 </div>
             </div>
 
             <hr>
 
-            <div class="row">
+            <!-- <div class="row">
                 <h3> Identification </h3>
                 <div class="mb-3 col-6">
                     <label for="idtype" class="form-label">ID Type</label>
                     <select class="form-select" name="idtype" id="idtype" aria-label="Default select example">
-                        <option value="" <?= $row['IDtype'] == '' ? 'selected' : '' ?> <?= $pass_id_confirmed == 'true' ? 'disabled' : '' ?>>-- Select -- </option>
-                        <option value="driver" <?= $row['IDtype'] == 'driver' ? 'selected' : '' ?> <?= $pass_id_confirmed == 'true' ? 'disabled' : '' ?>>Driver's License</option>
-                        <option value="umid" <?= $row['IDtype'] == 'umid' ? 'selected' : '' ?> <?= $pass_id_confirmed == 'true' ? 'disabled' : '' ?>>UMID</option>
-                        <option value="National ID" <?= $row['IDtype'] == 'student' ? 'selected' : '' ?> <?= $pass_id_confirmed == 'true' ? 'disabled' : '' ?>>Student ID</option>
-                        <option value="student" <?= $row['IDtype'] == 'student' ? 'selected' : '' ?> <?= $pass_id_confirmed == 'true' ? 'disabled' : '' ?>>Student ID</option>
+                        <option value=""<?//= $row['IDtype'] == '' ? 'selected' : '' ?> <?//= $pass_id_confirmed == 'true' ? 'disabled' : '' ?>>-- Select -- </option>
+                        <option value="driver" <?//= $row['IDtype'] == 'driver' ? 'selected' : '' ?> <?//= $pass_id_confirmed == 'true' ? 'disabled' : '' ?>>Driver's License</option>
+                        <option value="umid" <?//= $row['IDtype'] == 'umid' ? 'selected' : '' ?> <?//= $pass_id_confirmed == 'true' ? 'disabled' : '' ?>>UMID</option>
+                        <option value="National ID" <?//= $row['IDtype'] == 'student' ? 'selected' : '' ?> <?//= $pass_id_confirmed == 'true' ? 'disabled' : '' ?>>Student ID</option>
+                        <option value="student" <?//= $row['IDtype'] == 'student' ? 'selected' : '' ?> <?//= $pass_id_confirmed == 'true' ? 'disabled' : '' ?>>Student ID</option>
                     </select>
                 </div>
                 <div class="mb-3 col-6">
                     <label for="idnumber" class="form-label">ID Number</label>
-                    <input type="text" name="idnumber" id="idnumber" class="form-control" value="<?= $row['ValidIDNum'] ?>" <?= $pass_id_confirmed == 'true' ? 'readonly' : '' ?>>
+                    <input type="text" name="idnumber" id="idnumber" class="form-control" value="<?//= $row['ValidIDNum'] ?>" <//?= $pass_id_confirmed == 'true' ? 'readonly' : '' ?>>
                 </div>
-            </div>
+            </div> -->
 
             <div class="row">
                 <div class="col">
