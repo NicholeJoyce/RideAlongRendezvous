@@ -68,6 +68,9 @@ if (!empty($_SESSION['message'])) {
         <a href="user_config/user_module.php"> List of Verified Users </a>
         <a href="cico/cashin_design.php"> Cash In Approval </a>
         <a href="cashout/cashout_design.php"> Cash Out Approval </a>
+        <a href="reports/cashoutreps.php"> Cash Out Reports </a>
+        <a href="reports/cashinreps.php"> Cash In Reports </a>
+        <a href="reports/balance.php"> User Balance Reports Reports </a>
         <a href="../config/logout.php"> Logout </a>
         </div>
 
